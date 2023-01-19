@@ -24,5 +24,8 @@ With the command **docker-compose up** is possible to execute the containers.
 The exchange can be then reached at: *crispino.soi2122.local:8080/*
 
 ## Demo
+<video src='https://user-images.githubusercontent.com/22591922/213424730-9e27280b-216e-471c-9c6b-6435aacc0460.mov' width=200></video>
+
+
 
 
