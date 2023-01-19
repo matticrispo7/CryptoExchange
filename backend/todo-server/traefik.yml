@@ -1,0 +1,39 @@
+## Overview
+## - traefik: 9000 (app) and 9090 (traefik dashboard and api)
+## - static pages: 7001
+## - todo-server: 8000
+##
+## Instructions
+## -------------------------------------------------------
+## todo-app> http-server -p 7001 -g .
+## todo-server> npm start
+##
+## AGENT -> http://localhost:9000 -> trafik -> static (http://localhost:7001)
+## AGENT -> http://localhost:9000/api -> trafik -> todo-server (http://localhost:8000)
+## AGENT -> http://localhost:9090 -> traefik/dahsboard
+
+global:
+  checkNewVersion: false
+  sendAnonymousUsage: false
+
+entryPoints:
+  app:
+    address: ":9000"
+    forwardedHeaders:
+      trustedIPs:
+        - "127.0.0.1/32"
+  traefik:
+    address: ":9090"
+
+api:
+  dashboard: true
+  # leave to false in order to override this port in the dynamic config
+  insecure: false
+
+providers:
+  file:
+    filename: "./traefik-dynamic.yml"
+    watch: true
+
+#log:
+#  level: "DEBUG"

@@ -1,0 +1,28 @@
+version: "3.9"
+services:
+  # Frontend
+  app:
+    build: ./frontend
+    ports:
+      - 8080:80
+    networks:
+      soi-network:
+        ipv4_address: "10.88.0.21"
+
+  # Backend
+  server:
+    build: ./backend
+    ports:
+      - 8000:8000
+    networks:
+      soi-network:
+        #bind to apache proxy pass
+        ipv4_address: "10.88.0.11"
+
+networks:
+  soi-network:
+    name: soi-network
+    driver: bridge
+    ipam:
+      config:
+        - subnet: "10.88.0.0/16"

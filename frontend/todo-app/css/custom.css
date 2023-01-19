@@ -1,0 +1,294 @@
+/* Write here anything required to complete the laboratory */
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #ccdae3;
+  --bgLight: #edf0f2;
+  --text: #444;
+  --primary: #6577c9;
+  --primaryContrast: white;
+  --secondary: #f8c82a;
+  --secondaryContrast: #6577c9;
+  --accent: #2af8c8;
+  --warn: #c82af8;
+  --warnContrast: white;
+  --error: #dc143ce0;
+  --errorContrast: #222222;
+  --yellow: rgb(240, 185, 11);
+  --grey: rgb(132, 142, 156);
+  --buy-order: rgb(14, 203, 129);
+  --sell-order: rgb(246, 70, 93);
+}
+
+label,
+input,
+button,
+select,
+option,
+p,
+textarea {
+  color: var(--text);
+}
+
+h2,
+h3,
+h4,
+h5,
+span,
+strong {
+  color: var(--grey);
+  /*  */
+}
+h1 {
+  color: var(--yellow);
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.text-center {
+  text-align: center;
+}
+
+button i.eos-icons ~ span {
+  line-height: 1.5rem;
+  margin-left: 0.5rem;
+  height: 24px;
+  display: inline-block;
+}
+
+button {
+  line-height: 24px;
+  border-inline: none;
+  border-radius: 6px;
+  padding: 5px 10px;
+  background-color: var(--primary);
+  box-shadow: none;
+  border: 1px solid var(--primary);
+  color: var(--primaryContrast);
+}
+
+button.outline {
+  background-color: var(--bgLight);
+  border-color: var(--primary);
+  color: var(--text);
+}
+button.outline:hover {
+  color: var(--primaryContrast);
+}
+
+button:hover,
+button:focus {
+  border-color: var(--yellow);
+  color: var(--yellow);
+}
+
+button.warn {
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+
+button.warn:hover,
+button.warn:focus {
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+
+button {
+  background-color: rgba(43, 47, 54, 0.9);
+  border: none;
+}
+
+input[type="text"],
+input[type="password"] {
+  border-inline: none;
+  border: 1px solid var(--yellow);
+  border-radius: 3px;
+  padding: 3px 5px;
+  margin: 0.2rem;
+}
+
+input[type="text"]:focus {
+  border-color: var(--yellow);
+}
+
+input,
+select {
+  background-color: #292d34;
+  color: #c9cccf;
+  border: none;
+  border-radius: 3px;
+}
+
+/* Layout */
+
+.content {
+  margin: 1rem auto;
+  min-width: 80%;
+  max-width: 90%;
+}
+
+.header img.logo {
+  margin-right: 1rem;
+}
+
+.home {
+  padding-top: 1rem;
+  width: 90%;
+}
+
+.user-info {
+  /* float: right; */
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid;
+  border-color: rgb(240, 185, 11);
+  margin: 1rem auto 0;
+}
+
+.panel {
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--bg);
+  background-color: var(--bgLight);
+  margin: 1rem auto 0;
+  width: 90%;
+}
+
+/* Input fields */
+
+.form-group {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.form-group .input-group {
+  width: 90%;
+  display: flex;
+}
+
+.input-group input[type="text"] {
+  flex-grow: 10;
+}
+
+/* Container 
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  padding-top: 1rem;
+} */
+
+.ob-flex-item {
+  align-self: flex-start; /* The align-self property specifies the alignment for the selected item inside the flexible container */
+  flex-grow: 5; /* The flex-grow property specifies how much a flex item will grow relative to the rest of the flex items */
+  height: 100%;
+}
+.flex-item-right {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+  /*background-color: #d9fff6; */
+  flex-grow: 5;
+}
+
+.sb-flex-item {
+  align-self: auto;
+}
+
+#data {
+  margin-top: 1rem;
+}
+
+/* Order book and buy/sell orders */
+.order-book,
+.dashboard {
+  padding: 0.5rem;
+  margin: 0.5rem auto 0;
+  margin-top: 0.5rem;
+  /* width: 45%; */
+}
+
+td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+tr {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.buy tr {
+  color: var(--buy-order);
+}
+.sell tr {
+  color: var(--sell-order);
+}
+
+row {
+  padding: 1rem;
+}
+
+strong:hover,
+span:hover,
+tr:hover {
+  color: var(--yellow);
+}
+
+#dash-preview thead th,
+#table-dashboard thead th {
+  color: var(--yellow);
+}
+
+#tbody-dash-preview td,
+#tbody-dashboard td {
+  color: rgb(234, 236, 239);
+}
+
+.submit-order {
+  padding: 1rem;
+  /* float: right; */
+  border-radius: 6px;
+  border: 1px solid var(--bg);
+  background-color: var(--bgLight);
+  margin: 1rem auto 0;
+  margin-top: 3rem;
+  /* width: 45%; */
+}
+
+.sub {
+  /* background-color: #b3d4fc; */
+  padding: 0.5rem;
+  margin: 0.5rem;
+  color: rgb(234, 236, 239);
+}
+
+.sub:hover {
+  border-color: var(--yellow);
+  color: var(--yellow);
+}
+
+/* Toast */
+
+.toast {
+  width: 100%;
+  padding: 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.toast.error {
+  background-color: var(--error);
+  color: var(--errorContrast);
+}

@@ -1,0 +1,81 @@
+{
+  "name": "todo-server",
+  "version": "2.0.0",
+  "description": "REST APIs for the TODO web application",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "nodemon src/server.js",
+    "lint": "eslint src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/SOI-Unipr/todo-server.git"
+  },
+  "author": "Mattia Crispino",
+  "maintainers": [
+    "Mattia Crispino <mattia.crispino@gmail.com>"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SOI-Unipr/todo-server/issues"
+  },
+  "homepage": "https://github.com/SOI-Unipr/todo-server#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.19.0",
+    "commander": "^6.1.0",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.1",
+    "fs": "^0.0.1-security",
+    "google-auth-library": "^7.14.1",
+    "googleapis": "^98.0.0",
+    "http-status-enum": "^1.0.2",
+    "jsonwebtoken": "^8.5.1",
+    "jwks-rsa": "^2.0.5",
+    "knex": "^2.3.0",
+    "lodash": "4.17.21",
+    "method-override": "^3.0.0",
+    "morgan": "^1.10.0",
+    "node-fetch": "^3.2.3",
+    "rotating-file-stream": "^2.1.3",
+    "rxjs": "^7.5.7",
+    "short-unique-id": "^4.4.4",
+    "short-uuid": "^4.2.2",
+    "sqlite3": "^5.1.2",
+    "uuid": "^8.3.2"
+  },
+  "peerDependencies": {
+    "lodash": "4.17.21"
+  },
+  "bundleDependencies": [
+    "body-parser",
+    "commander",
+    "compression",
+    "dotenv",
+    "express",
+    "googleapis",
+    "google-auth-library",
+    "jsonwebtoken",
+    "jwks-rsa",
+    "method-override",
+    "morgan",
+    "node-fetch",
+    "rotating-file-stream",
+    "uuid"
+  ],
+  "devDependencies": {
+    "eslint": "^7.9.0",
+    "http-proxy": "^1.18.1",
+    "http-proxy-rules": "^1.1.3",
+    "nodemon": "^2.0.15"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "src"
+    ]
+  }
+}

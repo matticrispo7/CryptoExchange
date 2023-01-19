@@ -1,0 +1,33 @@
+http:
+  routers:
+    to-app-fe:
+      entryPoints:
+        - app
+      rule: "Host(`localhost`) && !PathPrefix(`/api`)"
+      service: app-fe
+    to-app-be:
+      entryPoints:
+        - app
+      rule: "HostRegexp(`localhost`) && PathPrefix(`/api`)"
+      middlewares:
+        - strip-api-prefix
+      service: app-be
+    to-traefik:
+      rule: "PathPrefix(`/api`) || PathPrefix(`/dashboard`)"
+      entrypoints:
+        - traefik
+      service: api@internal
+  services:
+    app-fe:
+      loadBalancer:
+        servers:
+          - url: "http://localhost:7001"
+    app-be:
+      loadBalancer:
+        servers:
+          - url: "http://localhost:8000"
+  middlewares:
+    strip-api-prefix:
+      stripPrefix:
+        prefixes:
+          - "/api"
